@@ -33,7 +33,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost:8000',
     '127.0.0.1:8000',
-    'https://django-grp2.onrender.com',
+    'django-grp2.onrender.com',
 ]
 
 # Application definition
