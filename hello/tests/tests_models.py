@@ -10,7 +10,7 @@ class LogMessageTests(TestCase):
         Create a LogMessage instance
         """""
         return  LogMessage.objects.create(
-            message="This is a test message.",
+            message="This is a test message",
             log_date=timezone.now()
         )
 
