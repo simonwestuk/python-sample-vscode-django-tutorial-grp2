@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from django.utils.timezone import datetime
 from django.views.generic import ListView
 
@@ -48,3 +48,10 @@ def log_message(request):
             return render(request, "hello/log_message.html", {"form": form})
     else:
         return render(request, "hello/log_message.html", {"form": form})
+
+
+def delete_message(request, message_id):
+    if request.method == "POST":
+        message = get_object_or_404(LogMessage, id=message_id)
+        message.delete()
+        return redirect('home')

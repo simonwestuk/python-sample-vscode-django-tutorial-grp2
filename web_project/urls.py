@@ -17,10 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import include, path
+from hello import views
 
 urlpatterns = [
     path("", include("hello.urls")),
     path("admin/", admin.site.urls),  # Activates the admin interface
+    path('delete_message/<int:message_id>/', views.delete_message, name="delete_message")
 ]
 
 urlpatterns += staticfiles_urlpatterns()

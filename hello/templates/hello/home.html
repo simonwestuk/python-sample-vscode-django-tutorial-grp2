@@ -22,6 +22,12 @@
                     <td>
                         {{ message.message }}
                     </td>
+                    <td>
+                        <form action="{% url 'delete_message' message.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="submit" value="Delete" class="btn btn-danger">
+                        </form>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>
